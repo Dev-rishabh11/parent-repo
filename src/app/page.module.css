@@ -1,0 +1,11 @@
+.main{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.listss{
+    display: flex;
+    list-style-type: none;
+    gap: '10px';
+}
