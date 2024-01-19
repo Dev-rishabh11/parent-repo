@@ -4,7 +4,7 @@ import React from "react";
 
 
 interface IHome {
-  components: IComponent
+  components: IComponent[]
 }
 
 interface IComponent {
@@ -19,7 +19,7 @@ const Home: React.FC<IHome> = ({components}: IHome) => {
         justifyContent: 'space-around', backgroundColor: 'lightblue', alignItems: 'center', textAlign: 'center'
       }}>
         <div>
-          <Image src={'/favicon.ico'} width={20} height={20} />
+          <Image src={'/favicon.ico'} width={20} height={20} alt={"favicon"} />
         </div>
         <div>
           <ul className='listss' style={{
@@ -38,7 +38,7 @@ const Home: React.FC<IHome> = ({components}: IHome) => {
             <li>
               <a>Notification</a>
             </li>
-            {components((component: { name: any }) => (
+            {components.map((component: { name: any }) => (
               <li>
                 {component.name}
               </li>
