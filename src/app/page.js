@@ -31,11 +31,14 @@ export default function Home(props) {
             <li>
               <a>Notification</a>
             </li>
+            {props.components((component)=>(
+              <li>
+                {component.name}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-      {/* <Home2 />
-     { <Home3 /> } */}
     </>
   )
 }
