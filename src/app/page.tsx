@@ -1,9 +1,16 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import Home2 from '../../child1/src/app/page'
-import Home3 from '../../child2/src/app/page'
+import Image from "next/image";
+import styles from "./page.module.css";
+import React from "react";
 
-export default function Home(props) {
+
+interface IHome {
+  components: IComponent
+}
+
+interface IComponent {
+   name: string 
+}
+const Home: React.FC<IHome> = ({components}: IHome) => {
   return (
     <>
       <div className='main' style={{
@@ -31,7 +38,7 @@ export default function Home(props) {
             <li>
               <a>Notification</a>
             </li>
-            {props.components((component)=>(
+            {components((component: { name: any }) => (
               <li>
                 {component.name}
               </li>
@@ -40,5 +47,7 @@ export default function Home(props) {
         </div>
       </div>
     </>
-  )
+  );
 }
+
+export default Home;
